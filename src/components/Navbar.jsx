@@ -26,12 +26,6 @@ const Navbar = () => {
 
     //////////////////////////////////////////
 
-    const deleteFromFavorites = index => {
-        let newFavorites = favorites.splice(index, 1);
-
-        actions.setFavorites(newFavorites);
-    };
-
     return (
         <nav className="navbar navbar-light bg-dark sticky-top">
             <div className="container-fluid  d-flex justify-content-evenly">
@@ -65,7 +59,7 @@ const Navbar = () => {
                                     <button
                                         className="btn bi bi-x fs-6 position-absolute top-50 end-0 "
                                         onClick={() => {
-                                            deleteFromFavorites(index);
+                                            actions.deletefavorite(index);
                                         }}
                                     ></button>
                                 </div>

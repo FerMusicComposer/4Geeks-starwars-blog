@@ -23,7 +23,13 @@ const getState = ({ getStore, getActions, setStore }) => {
                     actions.setFavorites(favorite);
                 }
             },
+            deleteFavorite: id => {
+                const store = getStore();
+                const favoritesCopy = [...store.favorites];
 
+                favoritesCopy.splice(id, 1);
+                setStore({ favorites: [...favoritesCopy] });
+            },
             setCharacters: data => {
                 //const store = getStore();
                 setStore({ characters: data });
